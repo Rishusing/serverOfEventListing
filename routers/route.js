@@ -65,7 +65,7 @@ router.get('/findEvent',authenticate,async(req,res) => {
 
 router.post('/addEvent',authenticate,async(req,res) => {
     const user = await User.findOne({ _id:req.userID })
-    const data = JSON.stringify(req.body.data);
+    const data = JSON.stringify(req.body);
     user.events = user.events.concat(data)
     await user.save()
     res.send({msg:"success"})
