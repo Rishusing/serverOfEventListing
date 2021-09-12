@@ -15,6 +15,10 @@ app.use(require('./routers/route'));
 
 const port = process.env.PORT || 5000;
 
+app.get('/',(req,res) => {
+    res.send('Welcome to app')
+})
+
 app.get('/signin',(req,res) => {
     res.send('Welcome to signin page')
 })
